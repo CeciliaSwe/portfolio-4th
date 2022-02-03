@@ -9,28 +9,30 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for workout in workout_list %}
-                <div class="col-md-4">
+                <div class="col-md-4 card-outer">
                     <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ workout.author }}</p>
-                                </div>
-                            </div>
+                        <div class="card-body workout-card">
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ workout.title }}</h2>
-                                <p class="card-text">{{ workout.excerpt }}</p>
                             </a>
+                            <h6 class="category-banner"> {{ workout.category }}</h6>
                             <hr />
-                            <h3> {{ workout.category }}</h3>
                             <ul>
-                                <li><span> {{ workout.participants }}</span></li>
-                                <li><span>{{ workout.length }}</span></li>
+                                <li><span> <i class="far fa-user"></i> {{ workout.participants }} </span></li>
+                                <li><span><i class="far fa-clock"></i> {{ workout.length }}</span></li>
                             </ul>
+                            <div class="equipment-outer">
+                                <span><i class="fas fa-dumbbell"></i></span>
+                                <span class="equipment">{{ workout.equipment }} |</span>
+                            </div>
                             <p>
-                                {{ workout.content|striptags }}
+                                {{ workout.excerpt }}
 
                             </p>
+
+
+                            <button class="btn">view workout <i class="fa fa-arrow-right"></i></button>
+
                         </div>
                     </div>
                 </div>
