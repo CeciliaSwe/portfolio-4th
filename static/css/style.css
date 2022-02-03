@@ -1,6 +1,67 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #151515 ;
+    font-family: 'Murecho', sans-serif;
 }
+
+.workout-card {
+    background-color: #29292b;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+    margin: 1em 0 1em;
+    padding: 0;
+    font-size: 0.9em;
+    font-weight: 100;
+
+}
+
+li {
+    display: inline-block;
+    line-height: 1em;
+    margin-right: 1em;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+i {
+    color: #fe8c08;
+    margin-right: 0.5em;
+}
+
+
+
+.equipment-outer {
+    margin: 1em 0 1em;
+}
+
+.equipment {
+    margin-right: 0.5em;
+}
+
+.btn {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    background-color: #fe8c08;
+    color: $primary-color;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: $border-radius;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+
+
 
 .brand {
     font-family: Lato, sans-serif;
