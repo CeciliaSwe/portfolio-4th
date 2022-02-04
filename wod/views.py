@@ -42,3 +42,4 @@ class WorkoutFull(View):
                 "workout_form": WorkoutForm()
             },
         )
+

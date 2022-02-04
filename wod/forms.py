@@ -5,4 +5,5 @@ from django import forms
 class WorkoutForm(forms.ModelForm):
     class Meta:
         model = Workout
-        fields = ('title', 'content', 'length', 'participants', 'equipment')
+        fields =  ['title', 'content', 'length', 'participants', 'equipment']
+

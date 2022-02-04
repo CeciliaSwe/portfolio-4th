@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'wod',
 ]
 
+crispy_template_pack ='uni_form'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
