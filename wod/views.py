@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from .models import Workout
+from .forms import WorkoutForm
 
 class WorkoutList(generic.ListView):
     model = Workout
@@ -38,5 +39,6 @@ class WorkoutFull(View):
             "workout_full.html",
             {
                 "workout": workout,
+                "workout_form": WorkoutForm()
             },
         )
