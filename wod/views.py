@@ -2,8 +2,41 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from .models import Workout
 
-class PostWorkout(generic.ListView):
-    model = Workout()
+class WorkoutList(generic.ListView):
+    model = Workout
     queryset = Workout.objects.order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
+
+
+
+class WorkoutFull(View):
+
+    model = Workout
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Workout.objects.order_by("-created_on")
+        workout = get_object_or_404(queryset, slug=slug)
+
+
+        return render(
+            request,
+            "workout_full.html",
+            {
+                "workout": workout
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+
+        queryset = Workout.objects()
+        post = get_object_or_404(queryset, slug=slug)
+
+
+        return render(
+            request,
+            "workout_full.html",
+            {
+                "workout": workout,
+            },
+        )
