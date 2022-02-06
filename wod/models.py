@@ -42,10 +42,10 @@ class Workout(models.Model):
     excerpt = models.TextField(blank=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    category = models.CharField(max_length=30, choices=WORKOUT_CATEGORY_OPTIONS)
-    length = models.CharField(max_length=30, choices=WORKOUT_LENGTH_OPTIONS)
-    participants = models.CharField(max_length=30, choices=WORKOUT_PARTICIPANTS_OPTIONS)
-    equipment = models.CharField(max_length=30, choices=WORKOUT_EQUIPMENT_OPTIONS, default="Barbell")
+    category = models.CharField(max_length=30, choices=WORKOUT_CATEGORY_OPTIONS, default='Strength')
+    length = models.CharField(max_length=30, choices=WORKOUT_LENGTH_OPTIONS, default='Short < 25mins')
+    participants = models.CharField(max_length=30, choices=WORKOUT_PARTICIPANTS_OPTIONS, default='Single')
+    equipment = models.CharField(max_length=30, choices=WORKOUT_EQUIPMENT_OPTIONS, default="Dumbbell")
 
     class Meta:
         ordering = ["-created_on"]
