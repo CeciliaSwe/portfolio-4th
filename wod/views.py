@@ -18,14 +18,14 @@ class WorkoutFull(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Workout.objects.order_by("-created_on")
         workout = get_object_or_404(queryset, slug=slug)
+        form = WorkoutForm()
 
 
         return render(
             request,
             "workout_full.html",
             {
-                "workout": workout
+                "workout": workout,
+                'form': form,
             },
         )
-
-
