@@ -5,9 +5,9 @@
 
 <h1>Add a todo item:</h1>
 <form method="POST" action="add">
-    {{ comment_form | crispy }}
+
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ workout_form }}
     <div>
         <p>
             <button type="submit">Add Workout</button>

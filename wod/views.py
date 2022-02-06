@@ -28,18 +28,4 @@ class WorkoutFull(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
-
-        queryset = Workout.objects()
-        post = get_object_or_404(queryset, slug=slug)
-
-
-        return render(
-            request,
-            "workout_full.html",
-            {
-                "workout": workout,
-                "workout_form": WorkoutForm()
-            },
-        )
 

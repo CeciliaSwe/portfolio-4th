@@ -7,3 +7,5 @@ class WorkoutForm(forms.ModelForm):
         model = Workout
         fields =  ['title', 'content', 'length', 'participants', 'equipment']
 
+form = WorkoutForm()
+
