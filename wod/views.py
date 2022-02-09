@@ -30,5 +30,6 @@ class WorkoutFull(View):
             },
         )
 
+
 def add_item(request):
-    return render(request,"add_item.html")
+    return render(request, "add_item.html")
