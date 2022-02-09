@@ -29,3 +29,6 @@ class WorkoutFull(View):
                 'form': form,
             },
         )
+
+def add_item(request):
+    return render(request,"add_item.html")
