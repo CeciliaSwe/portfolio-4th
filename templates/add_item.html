@@ -3,6 +3,13 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+
 <h1>Add a workout:</h1>
+<div>
+    <form action="add" method="POST">
+        {% csrf_token%}
+        {{ form | crispy }}
+    </form>
+</div>
 
 {%endblock%}

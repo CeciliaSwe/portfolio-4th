@@ -2,6 +2,7 @@
 
 {% block content %}
 
+
 <div class="container-fluid">
     <div class="row">
 
@@ -43,8 +44,11 @@
     </div>
 </div>
 
-<!-- Trigger/Open The Modal -->
-<button id="add-workout">Add Workout</button>
+
+<a class="nav-link" href="{% url 'add_item' %}">Add Workout</a>
+
+<!-- Button to trigger modal
+<button id="add-workout">Add Workout</button> -->
 
 <!-- The Modal -->
 <div id="modal-add" class="modal">
