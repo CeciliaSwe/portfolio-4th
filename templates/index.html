@@ -42,6 +42,24 @@
         </div>
     </div>
 </div>
-<div><button><a href="#">Add a workout</a></button></div>
+
+<!-- Trigger/Open The Modal -->
+<button id="add-workout">Add Workout</button>
+
+<!-- The Modal -->
+<div id="modal-add" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>here is where the form goes</p>
+    <form action="add" method="POST">
+        {% csrf_token%}
+        {{ form }}
+    </form>
+    <button id="add-workout">Save Workout</button>
+  </div>
+
+</div>
 
 {%endblock%}

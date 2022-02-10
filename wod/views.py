@@ -11,6 +11,7 @@ class WorkoutList(generic.ListView):
 
 
 
+
 class WorkoutFull(View):
 
     model = Workout
