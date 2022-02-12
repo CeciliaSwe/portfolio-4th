@@ -37,8 +37,7 @@ WORKOUT_EQUIPMENT_OPTIONS = (
 class Workout(models.Model):
     title = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="workout_post"
-    )
+    author = models.ForeignKey(User, default="admin", on_delete=models.CASCADE, related_name="workout_post")
     excerpt = models.TextField(blank=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
