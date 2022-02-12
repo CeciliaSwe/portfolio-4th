@@ -30,13 +30,14 @@ class WorkoutAdd(View):
     def post(self, request, *args, **kwargs):
 
         add_workout = WorkoutForm(data=request.POST)
-
         if add_workout.is_valid():
+            add_workout.instance.author = request.user
             add_workout.save()
+            print('saving')
             return redirect("/")
-
-
-        return redirect('/')
+        else:
+            print('not valid')
+            print(add_workout.errors)
 
 
 
@@ -66,5 +67,36 @@ class WorkoutFull(View):
                 'form': form,
             },
         )
+
+# class WorkoutEdit(View):
+#     """ View to allow editing of existing posts """
+#     def get(self, request, id, *args, **kwargs):
+#         queryset = Workout.objects
+#         post = get_object_or_404(queryset, id=id)
+
+#         return render(
+#             request,
+#             'edit_post.html',
+#             {
+#                 'edit_form': WorkoutForm(instance=post)
+#             }
+#         )
+
+#     def post(self, request, id, *args, **kwargs):
+#         queryset = Workout.objects
+#         post = get_object_or_404(queryset, id=id)
+
+
+#         edit_form = WorkoutForm(request.POST, instance=post)
+
+#         if request.user == post.creator:
+#             if edit_form.is_valid():
+#                 edit_form.save()
+
+
+#             else:
+#                 edit_form = PostAddForm(instance=post)
+
+#         return redirect('/')
 
 

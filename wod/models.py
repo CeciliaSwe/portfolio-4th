@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 WORKOUT_LENGTH_OPTIONS = (
     ("Short < 25mins", "Short < 25mins"),
@@ -45,6 +46,10 @@ class Workout(models.Model):
     length = models.CharField(max_length=30, choices=WORKOUT_LENGTH_OPTIONS, default='Short < 25mins')
     participants = models.CharField(max_length=30, choices=WORKOUT_PARTICIPANTS_OPTIONS, default='Single')
     equipment = models.CharField(max_length=30, choices=WORKOUT_EQUIPMENT_OPTIONS, default="Dumbbell")
+
+    def save(self, **kwargs):
+        self.slug = slugify(self.title)
+        super(Workout, self).save(**kwargs)
 
     class Meta:
         ordering = ["-created_on"]

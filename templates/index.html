@@ -47,23 +47,5 @@
 
 <a class="nav-link" href="{% url 'add_item' %}">Add Workout</a>
 
-<!-- Button to trigger modal
-<button id="add-workout">Add Workout</button> -->
-
-<!-- The Modal -->
-<div id="modal-add" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>here is where the form goes</p>
-    <form action="add" method="POST">
-        {% csrf_token%}
-        {{ form }}
-    </form>
-    <button id="add-workout">Save Workout</button>
-  </div>
-
-</div>
 
 {%endblock%}

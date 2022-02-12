@@ -7,7 +7,7 @@ class WorkoutForm(forms.ModelForm):
         model = Workout
         fields = ['title', 'content', 'length', 'participants', 'equipment']
         widgets = {
-            'equipment' : forms.CheckboxSelectMultiple(),
+            'equipment' : forms.RadioSelect(),
             'length' : forms.RadioSelect(),
             'participants' : forms.RadioSelect()
 
