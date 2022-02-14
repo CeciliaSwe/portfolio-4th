@@ -68,6 +68,34 @@ class WorkoutFull(View):
             },
         )
 
+class WorkoutEdit(View):
+    """ View to allow editing of existing posts """
+    def get(self, request, id, *args, **kwargs):
+        queryset = Workout.objects
+        workout = get_object_or_404(queryset, id=id)
+
+        return render(
+            request,
+            'edit_item.html',
+            {
+                'workout_form': WorkoutForm(instance=workout)
+            }
+        )
+
+
+    def post(self, request, id, *args, **kwargs):
+        queryset = Workout.objects
+        workout = get_object_or_404(queryset, id=id)
+
+        add_workout = WorkoutForm(data=request.POST, instance=workout)
+        if add_workout.is_valid():
+            add_workout.save()
+            print('saving')
+            return redirect("/")
+        else:
+            print('not valid')
+            print(add_workout.errors)
+
 # class WorkoutEdit(View):
 #     """ View to allow editing of existing posts """
 #     def get(self, request, id, *args, **kwargs):
