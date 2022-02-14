@@ -24,8 +24,37 @@
                             <p>
                                 {{ workout.content|striptags }}
                             </p>
-                            <div><i class="far fa-heart"></i></div>
-                            <div><a class="nav-link" href="{% url 'edit_item' workout.id %}">Edit Workout</a></div>
+                            <div>
+                                <span>Favorite <i class="far fa-heart"></i></span>
+                                {% if user == workout.author %}
+                                <span class="btn btn-sm d-inline-block main-btn ms-3">
+                                    <a href="{% url 'edit_item' workout.id %}">Edit  <i class="fas fa-pen"></i></a>
+                                </span>
+                               <!-- Modal trigger button -->
+                                <span>
+                                    <button type="button" class="btn btn-sm main-btn ms-2" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    Delete  <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </span>
+
+                            </div>
+
+
+
+
+
+
+                            <!-- <a class="nav-link" href="{% url 'edit_item' workout.id %}">
+                                <button id="btn-custom-edit">edit workout <i class="fa fa-arrow-right"></i></button>
+                            </a>
+                            <a class="nav-link" href="#">
+                                <button id="btn-custom-edit">delete <i class="fa fa-arrow-right"></i></button>
+                            </a> -->
+
+                            {% else %}
+
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>
