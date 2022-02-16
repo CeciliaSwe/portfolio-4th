@@ -22,7 +22,7 @@
                             </ul>
                             <div class="equipment-outer">
                                 <span><i class="fas fa-dumbbell"></i></span>
-                                <span class="equipment">{{ workout.equipment }} |</span>
+                                <span class="equipment">{{ workout.equipment }} </span>
                             </div>
                             <p>
                                 {{ workout.excerpt }}
@@ -38,11 +38,22 @@
 
             </div>
         </div>
+        {% if user.is_authenticated %}
+        <div>
+            <a class="nav-link" href="{% url 'add_item' %}"><button type="button" class="btn btn-warning" id="btn-add">Add Workout</button></a>
+        </div>
+        {% else %}
+
+        <p><a href="{% url 'account_login' %}" class="sign-in-prompt">Sign in here</a> to add a workout.</p>
+
+        {% endif %}
+
     </div>
 </div>
 
 
-<a class="nav-link" href="{% url 'add_item' %}">Add Workout</a>
+
+
 
 
 {%endblock%}
