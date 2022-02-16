@@ -36,7 +36,6 @@ i {
 }
 
 
-
 .equipment-outer {
     margin: 1em 0 1em;
 }
@@ -62,21 +61,10 @@ i {
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
 
-#btn-custom-edit {
-    bottom: -10px;
-    right: -10px;
-    border: none;
-    outline: none;
-    display: flex;
-    align-items: center;
-    background-color: #fe8c08;
-    color: $primary-color;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    border-radius: $border-radius;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+
+#delete-text {
+    color: #fe8c08;
+}
 
 
 .brand {

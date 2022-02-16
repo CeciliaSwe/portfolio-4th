@@ -96,35 +96,14 @@ class WorkoutEdit(View):
             print('not valid')
             print(add_workout.errors)
 
-# class WorkoutEdit(View):
-#     """ View to allow editing of existing posts """
-#     def get(self, request, id, *args, **kwargs):
-#         queryset = Workout.objects
-#         post = get_object_or_404(queryset, id=id)
 
-#         return render(
-#             request,
-#             'edit_post.html',
-#             {
-#                 'edit_form': WorkoutForm(instance=post)
-#             }
-#         )
+def delete_item(request, id, *args, **kwargs):
+    """ View to delete workout """
+    queryset = Workout.objects
+    workout = get_object_or_404(queryset, id=id)
 
-#     def post(self, request, id, *args, **kwargs):
-#         queryset = Workout.objects
-#         post = get_object_or_404(queryset, id=id)
+    if request.user == workout.author:
+        workout.delete()
 
-
-#         edit_form = WorkoutForm(request.POST, instance=post)
-
-#         if request.user == post.creator:
-#             if edit_form.is_valid():
-#                 edit_form.save()
-
-
-#             else:
-#                 edit_form = PostAddForm(instance=post)
-
-#         return redirect('/')
-
+    return redirect('/')
 
