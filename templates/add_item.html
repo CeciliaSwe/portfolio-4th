@@ -3,14 +3,29 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+<div class="container-fluid">
+    <div class="row">
 
-<h1>Add a workout:</h1>
-<div>
-    <form action="#" method="POST">
-        {% csrf_token%}
-        {{ workout_form | crispy }}
-        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-    </form>
-</div>
+        <!-- Form Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 card-outer">
+                    <div class="card mb-8">
+                        <div class="card-body workout-card">
+                            <h1>Add a workout:</h1>
+                            <div>
+                                <form action="#" method="POST">
+                                    {% csrf_token%}
+                                    {{ workout_form | crispy }}
+                                    <button type="submit" class="btn btn-light">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-{%endblock%}
+    {%endblock%}
+

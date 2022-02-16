@@ -25,14 +25,7 @@ WORKOUT_EQUIPMENT_OPTIONS = (
     ("Dumbbell", "Dumbbell"),
     ("Barbell", "Barbell"),
     ("Kettlebell", "Kettlebell"),
-    ("Assault bike", "Assault bike"),
-    ("Plyobox", "Plyobox"),
-    ("Rig", "Rig"),
-    ("Wallball", "Wallball"),
-    ("Jumprope", "Jumprope"),
-    ("Rope", "Rope"),
-    ("Rower", "Rower"),
-    ("SkiErg", "SkiErg")
+    ("Rower", "Rower")
 )
 
 class Workout(models.Model):

@@ -1,8 +1,8 @@
-# ABC WOC
+# ABC WOD
 
 ACB WOD is a website for people who workout and need inspiration for their next workout (or Workout of the day - WOD). Any user can view workout, both exerpt and in detail, but only registered users can add workouts. Owners of workouts are also able to edit and delete their posts.
 
-![Image of application pages on different screen sizes](h)
+![Image of application pages on different screen sizes]()
 
 [Link to deployed site](https://wod-abc.herokuapp.com/)
 
