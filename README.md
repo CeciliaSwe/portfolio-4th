@@ -154,6 +154,8 @@ Please see below the desktop view wireframes for my application:
 
 ## Credits
 
+Used to set up SummerNote in ModelForms https://djangocentral.com/integrating-summernote-in-django/
+
 ### Content
 
 ### Media
