@@ -1,5 +1,7 @@
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django import forms
 from .models import Workout
+
 
 
 class WorkoutForm(forms.ModelForm):
@@ -10,8 +12,8 @@ class WorkoutForm(forms.ModelForm):
             'equipment' : forms.RadioSelect(),
             'length' : forms.RadioSelect(),
             'participants' : forms.RadioSelect(),
-            'category' : forms.RadioSelect()
-
+            'category' : forms.RadioSelect(),
+            'content': SummernoteWidget()
         }
 
 

@@ -28,7 +28,7 @@
                                 <span class="equipment">{{ workout.equipment }} </span>
                             </div>
                             <p>
-                                {{ workout.content|striptags }}
+                                {{ workout.content|safe}}
                             </p>
                             <div>
                                 <span>Favorite <i class="far fa-heart"></i></span>
