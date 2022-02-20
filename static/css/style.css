@@ -28,6 +28,7 @@ li {
 a {
     text-decoration: none;
     color: #fff;
+    font-weight: 700;
 }
 
 i {
@@ -76,8 +77,8 @@ i {
     font-weight: 300;
 }
 
-.light-bg {
-    background-color: #fff;
+.card-body {
+    margin-top: 7rem;
 }
 
 .dark-bg {
@@ -102,5 +103,7 @@ i {
 #back {
     margin-top: 10px;
 }
+
+
 
 
