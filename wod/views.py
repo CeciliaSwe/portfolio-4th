@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Workout
 from .forms import WorkoutForm
 
@@ -33,10 +34,10 @@ class WorkoutAdd(View):
         if add_workout.is_valid():
             add_workout.instance.author = request.user
             add_workout.save()
-            print('saving')
+            messages.add_message(request, messages.SUCCESS,'Workout successfully added!')
             return redirect("/")
         else:
-            print('not valid')
+            messages.add_message(request, messages.ERROR,'Something went wrong, please try again!')
             print(add_workout.errors)
 
 
@@ -90,11 +91,12 @@ class WorkoutEdit(View):
         add_workout = WorkoutForm(data=request.POST, instance=workout)
         if add_workout.is_valid():
             add_workout.save()
+            messages.add_message(request, messages.SUCCESS,'Workout successfully updated!')
             print('saving')
             return redirect("/")
         else:
-            print('not valid')
-            print(add_workout.errors)
+            messages.add_message(request, messages.ERROR,'Workout could not be updated, please try again')
+
 
 
 def delete_item(request, id, *args, **kwargs):
@@ -104,6 +106,7 @@ def delete_item(request, id, *args, **kwargs):
 
     if request.user == workout.author:
         workout.delete()
+        messages.add_message(request, messages.WARNING,'Workout successfully deleted!')
 
     return redirect('/')
 
