@@ -94,8 +94,8 @@ i {
     background-color: transparent;
 }
 
-.author {
-    color: white;
+.page-link {
+    color: red;
     margin: 4px;
     text-transform: uppercase;
 }
