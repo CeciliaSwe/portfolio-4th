@@ -3,7 +3,52 @@
 {% block content %}
 
 
+
+
+
+
+
 <div class="container-fluid">
+    <div class="row">
+        {% if user.is_authenticated %}
+        <div class="col-6 offset-3 mt-4 mb-4">
+            <h1 class="border-light pb-3 border-bottom mb-3">Welcome Back!
+            </h1>
+            <p>Browse and view workouts in detail to get inspiration for your next WOD (Workout Of the
+                Day), or add your own to inspire others!
+            </p>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="{% url 'add_item' %}" class="btn btn-light px-4 ">
+                    Add Workout <i class="fas fa-plus"></i>
+                </a>
+            </div>
+        </div>
+
+        {% else %}
+        <div class="col-8 offset-2 mt-4 mb-4 justify-content-center">
+            <h1>Welcome to
+            </h1>
+            <h2 class="border-light pb-3 border-bottom mb-3">WOD ABC
+            </h2>
+            <p>You can browse and view existing workouts in detail to get inspiration for your next WOD (Workout Of the
+                Day).
+            </p>
+            <p>To add your own workout, make sure to sign up or login!
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="{% url 'account_signup' %}" class="btn btn-light px-4 ">
+                    Sign Up
+                </a>
+                <a href="{% url 'account_login' %}" class="btn btn-secondary px-4">
+                    Login
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
     <div class="row">
 
         <!-- Blog Entries Column -->
@@ -13,7 +58,7 @@
                 <div class="col-md-4 card-outer">
                     <div class="card mb-4">
                         <div class="card-body workout-card">
-                                <h2 class="card-title">{{ workout.title }}</h2>
+                            <h2 class="card-title">{{ workout.title }}</h2>
                             <h6 class="category-banner"> {{ workout.category }}</h6>
                             <hr />
                             <ul>
@@ -44,8 +89,10 @@
         {% if user.is_authenticated %}
         <div class="row">
             <div class="col-md-2 mt-3">
-                <div class="back"><a href="{% url 'add_item' %}">
-                    Add Workout </a><i class="fas fa-plus"></i>
+                <div class="back">
+                    <a href="{% url 'add_item' %}" class="btn btn-light px-4 ">
+                        Add Workout <i class="fas fa-plus"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -72,7 +119,7 @@
     {% endif %}
 </div>
 
-    </div>
+</div>
 </div>
 
 
