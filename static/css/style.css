@@ -54,6 +54,7 @@ i {
     display: flex;
     align-items: center;
     background-color: #fe8c08;
+    color: #151515;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     text-transform: uppercase;
