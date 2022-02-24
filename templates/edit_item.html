@@ -4,13 +4,33 @@
 {% load crispy_forms_tags %}
 
 
-<h1>Add a workout:</h1>
-<div>
-    <form action="#" method="POST">
-        {% csrf_token%}
-        {{ workout_form | crispy }}
-        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-    </form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 mt-3">
+            <div class="back"><a href="{% url 'home' %}">
+                <i class="fas fa-arrow-left"></i>Back to Workouts</a></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-5 left">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 card-outer">
+                    <div class="card mb-4">
+                        <div class="card-body workout-card">
+                            <h1>Edit workout:</h1>
+                            <div>
+                                <form action="#" method="POST">
+                                    {% csrf_token%}
+                                    {{ workout_form | crispy }}
+                                    <button type="submit" class="btn btn-light">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {%endblock%}

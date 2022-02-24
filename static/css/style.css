@@ -70,13 +70,8 @@ i {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
-}
 
-.thin {
-    font-weight: 300;
-}
+
 
 .card-body {
     margin-top: 7rem;
@@ -95,24 +90,16 @@ i {
     background-color: transparent;
 }
 
-.page-link {
-    color: red;
-    margin: 4px;
-    text-transform: uppercase;
-}
 
-#back {
+.back {
     margin-top: 10px;
-    border: 1px solid yellow;
+
 }
 
 #id_content_iframe {
-    max-width: 80%;
+    max-width: 95%;
 }
 
-#deleteModal {
-    color: red;
-}
 
 
 
