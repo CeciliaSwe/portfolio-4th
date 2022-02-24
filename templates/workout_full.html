@@ -31,16 +31,15 @@
                                 {{ workout.content|safe}}
                             </p>
                             <div>
-                                <span>Favorite <i class="far fa-heart"></i></span>
                                 {% if user == workout.author %}
-                                <span class="btn btn-sm d-inline-block main-btn ms-3">
-                                    <a href="{% url 'edit_item' workout.id %}">Edit <i class="fas fa-pen"></i></a>
+                                <span class="btn btn-sm">
+                                    <a href="{% url 'edit_item' workout.id %}"> <i class="fas fa-pen"></i></a>
                                 </span>
                                 <!-- Modal trigger button -->
                                 <span>
-                                    <button type="button" class="btn btn-sm main-btn ms-2" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#deleteModal">
-                                        Delete <i class="far fa-trash-alt"></i>
+                                         <i class="far fa-trash-alt"></i>
                                     </button>
                                 </span>
 
