@@ -30,7 +30,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["wod-abc.herokuapp.com", "localhost"]
 
-X-FRAME-OPTIONS: ALLOW-FROM http://ami.responsivedesign.is
+X_FRAME_OPTIONS: ALLOW-FROM http://ami.responsivedesign.is/
 
 
 # Application definition
