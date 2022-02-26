@@ -3,11 +3,6 @@
 {% block content %}
 
 
-
-
-
-
-
 <div class="container-fluid">
     <div class="row">
         {% if user.is_authenticated %}
@@ -111,20 +106,13 @@
             <li><a href="?page={{ page_obj.previous_page_number }}">Prev <i class="fas fa-arrow-left"></i></a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}">Next <i class="fas fa-arrow-right"></i></i></a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}">Next <i class="fas fa-arrow-right"></i></a></li>
 
             {% endif %}
         </ul>
     </nav>
     {% endif %}
 </div>
-
-</div>
-</div>
-
-
-
-
 
 
 {%endblock%}
