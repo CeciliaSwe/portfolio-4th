@@ -92,14 +92,29 @@ If user is the author of the workout, edit and delete icons will display at the 
 
 #### Add Workout / Edit
 
-Add Workout displays a custom form where all fields are required. The content filed is a SummerNote WYSIWYG which allows user to custom the visual appearance of the content. Submitting a valid form will redirect user back to the homepage and the newly added workout is displayed first. A success message is displayed and automatically closed after 3,5 seconds.
+Add Workout displays a custom form where all fields are required. The content filed is a SummerNote WYSIWYG which allows user to custom the visual appearance of the content.
+
+![Add](assets/features/add_form.png)
+
+Submitting a valid form will redirect user back to the homepage and the newly added workout is displayed first. A success message is displayed and automatically closed after 3,5 seconds.
+
+![Workout](assets/features/add_success.png)
+
 If the user does not fill out the title field, the form will not submit and the title field is highlighted. If the user does to fill out any content, the form will reload blank and an error message is displayed and automatically closed after 3,5 seconds.
+
+![Workout](assets/features/add_error.png)
 
 The Edit form is identical to the Add form, but is pre-populated with the current contents.
 
 #### Delete Workout
 
-If user us the author of a workout, a delete icon will be displayed when viewing the full workout. Clicking the delete icon prompts a Delete Modal, asking "Are you sure you want to delete this workout?". Chosing "Close" will close the modal without action. Chosing "Delete" will delete the workout permanently and display a message to the user that the Workout has been deleted. The message will be automatically closed after 3,5 seconds.
+If user us the author of a workout, a delete icon will be displayed when viewing the full workout. Clicking the delete icon prompts a Delete Modal, asking "Are you sure you want to delete this workout?". Chosing "Close" will close the modal without action.
+
+![Workout](assets/features/delete_modal.png)
+
+Chosing "Delete" will delete the workout permanently and display a message to the user that the Workout has been deleted. The message will be automatically closed after 3,5 seconds.
+
+![Workout](assets/features/delete_success.png)
 
 #### Signup / Login / Logout
 
