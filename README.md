@@ -67,7 +67,43 @@ Github Issues were used to create User Stories and group them according to MoSCo
 #### Navbar and footer
 Navbar and footer are using Bootstrap components and are adjusted  to the needs of the project.
 
-#### Home page
+##### Home page
+
+Home page consists of a Welcome Hero with a short message with buttons to Sign up/Login or Add Workout - depending on the user login status.
+![Home](assets/features/index_loggedout.png)
+
+![Home](assets/features/index_loggedin.png)
+
+Second part of the home page is the list of workouts. The list is generated dynamically as per most current workouts first. The page paginated at 9 workouts and will at that point display Next /Prev buttons to navigate to next and previous pages.
+
+![Home](assets/features/index_pagination.png)
+
+
+
+#### Workout full
+
+Clicking "View Workout" will take the user to the full Workout where the full contents is displayed.
+
+![Workout](assets/features/workout_full_notauthor.png)
+
+If user is the author of the workout, edit and delete icons will display at the bottom if the workout card to allow user to edit workout or delete workout.
+
+![Workout](assets/features/workout_full_author.png)
+
+#### Add Workout / Edit
+
+Add Workout displays a custom form where all fields are required. The content filed is a SummerNote WYSIWYG which allows user to custom the visual appearance of the content. Submitting a valid form will redirect user back to the homepage and the newly added workout is displayed first. A success message is displayed and automatically closed after 3,5 seconds.
+If the user does not fill out the title field, the form will not submit and the title field is highlighted. If the user does to fill out any content, the form will reload blank and an error message is displayed and automatically closed after 3,5 seconds.
+
+The Edit form is identical to the Add form, but is pre-populated with the current contents.
+
+#### Delete Workout
+
+If user us the author of a workout, a delete icon will be displayed when viewing the full workout. Clicking the delete icon prompts a Delete Modal, asking "Are you sure you want to delete this workout?". Chosing "Close" will close the modal without action. Chosing "Delete" will delete the workout permanently and display a message to the user that the Workout has been deleted. The message will be automatically closed after 3,5 seconds.
+
+#### Signup / Login / Logout
+
+Users can signup to gain access to all features (i.e. ability to add, edit and delete their own Workouts). Once an account is created, users can login and logout.
 
 
 
