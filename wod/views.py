@@ -1,33 +1,28 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Workout
 from .forms import WorkoutForm
+
 
 class WorkoutList(generic.ListView):
     """
     Workout summary
     """
+
     model = Workout
     queryset = Workout.objects.order_by("-created_on")
     template_name = "index.html"
     paginate_by = 9
 
 
-
-
 class WorkoutAdd(View):
     """ View to allow adding of new posts """
+
     def get(self, request, *args, **kwargs):
 
-        return render(
-            request,
-            'add_item.html',
-            {
-                'workout_form': WorkoutForm()
-            }
-        )
+        return render(request,
+                      "add_item.html", {"workout_form": WorkoutForm()})
 
     def post(self, request, *args, **kwargs):
 
@@ -35,14 +30,16 @@ class WorkoutAdd(View):
         if add_workout.is_valid():
             add_workout.instance.author = request.user
             add_workout.save()
-            messages.add_message(request, messages.SUCCESS,'Workout successfully added!')
+            messages.add_message(
+                request, messages.SUCCESS, "Workout successfully added!"
+            )
             return redirect("/")
         else:
-            messages.add_message(request, messages.ERROR,'Something went wrong, please try again!')
+            messages.add_message(
+                request, messages.ERROR,
+                "Something went wrong, please try again!"
+            )
             print(add_workout.errors)
-
-
-
 
 
 class WorkoutFull(View):
@@ -60,30 +57,27 @@ class WorkoutFull(View):
         workout = get_object_or_404(queryset, slug=slug)
         form = WorkoutForm()
 
-
         return render(
             request,
             "workout_full.html",
             {
                 "workout": workout,
-                'form': form,
+                "form": form,
             },
         )
 
+
 class WorkoutEdit(View):
     """ View to allow editing of existing posts """
+
     def get(self, request, id, *args, **kwargs):
         queryset = Workout.objects
         workout = get_object_or_404(queryset, id=id)
 
         return render(
             request,
-            'edit_item.html',
-            {
-                'workout_form': WorkoutForm(instance=workout)
-            }
+            "edit_item.html", {"workout_form": WorkoutForm(instance=workout)}
         )
-
 
     def post(self, request, id, *args, **kwargs):
         queryset = Workout.objects
@@ -92,12 +86,17 @@ class WorkoutEdit(View):
         add_workout = WorkoutForm(data=request.POST, instance=workout)
         if add_workout.is_valid():
             add_workout.save()
-            messages.add_message(request, messages.SUCCESS,'Workout successfully updated!')
-            print('saving')
+            messages.add_message(
+                request, messages.SUCCESS, "Workout successfully updated!"
+            )
+            print("saving")
             return redirect("/")
         else:
-            messages.add_message(request, messages.ERROR,'Workout could not be updated, please try again')
-
+            messages.add_message(
+                request,
+                messages.ERROR,
+                "Workout could not be updated, please try again",
+            )
 
 
 def delete_item(request, id, *args, **kwargs):
@@ -107,7 +106,7 @@ def delete_item(request, id, *args, **kwargs):
 
     if request.user == workout.author:
         workout.delete()
-        messages.add_message(request, messages.WARNING,'Workout successfully deleted!')
+        messages.add_message(request,
+                             messages.WARNING, "Workout successfully deleted!")
 
-    return redirect('/')
-
+    return redirect("/")
