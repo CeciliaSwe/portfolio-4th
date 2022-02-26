@@ -3,87 +3,85 @@
 {% block content %}
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2 mt-3">
-            <div class="back"><a href="{% url 'home' %}">
-                <i class="fas fa-arrow-left"></i>Back to Workouts</a></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 mt-5 left">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-8 offset-md-2 card-outer">
-                    <div class="card mb-4">
-                        <div class="card-body workout-card">
-                            <h2 class="card-title">{{ workout.title }}</h2>
-                            <h6 class="category-banner"> {{ workout.category }}</h6>
-                            <hr />
-                            <ul>
-                                <li><span> <i class="far fa-user"></i> {{ workout.participants }} </span></li>
-                                <li><span><i class="far fa-clock"></i> {{ workout.length }}</span></li>
-                            </ul>
-                            <div class="equipment-outer">
-                                <span><i class="fas fa-dumbbell"></i></span>
-                                <span class="equipment">{{ workout.equipment }} </span>
-                            </div>
-                            <p>
-                                {{ workout.content|safe}}
-                            </p>
-                            <div>
-                                {% if user == workout.author %}
-                                <span class="btn btn-sm">
-                                    <a href="{% url 'edit_item' workout.id %}"> <i class="fas fa-pen"></i></a>
-                                </span>
-                                <!-- Modal trigger button -->
-                                <span>
-                                    <button type="button" class="btn btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#deleteModal">
-                                         <i class="far fa-trash-alt"></i>
-                                    </button>
-                                </span>
+                <div class="col-md-2 mt-3">
+                    <div class="back"><a href="{% url 'home' %}">
+                            <i class="fas fa-arrow-left"></i>Back to Workouts</a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mt-5 left">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2 card-outer">
+                            <div class="card mb-4">
+                                <div class="card-body workout-card">
+                                    <h2 class="card-title">{{ workout.title }}</h2>
+                                    <h6 class="category-banner"> {{ workout.category }}</h6>
+                                    <hr />
+                                    <ul>
+                                        <li><span> <i class="far fa-user"></i> {{ workout.participants }} </span></li>
+                                        <li><span><i class="far fa-clock"></i> {{ workout.length }}</span></li>
+                                    </ul>
+                                    <div class="equipment-outer">
+                                        <span><i class="fas fa-dumbbell"></i></span>
+                                        <span class="equipment">{{ workout.equipment }} </span>
+                                    </div>
+                                    {{ workout.content|safe}}
+                                    <div>
+                                        {% if user == workout.author %}
+                                        <span class="btn btn-sm">
+                                            <a href="{% url 'edit_item' workout.id %}"> <i class="fas fa-pen"></i></a>
+                                        </span>
+                                        <!-- Modal trigger button -->
+                                        <span>
+                                            <button type="button" class="btn btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#deleteModal">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </span>
 
-                            </div>
+                                    </div>
 
-                            <!-- Deletion Modal -->
-                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="modalHeading"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header workout-card">
-                                            <h5 class="modal-title workout-card" id="modalHeading">Delete Post</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body workout-card">
-                                            Are you sure you want to delete this post?
-                                        </div>
-                                        <div class="modal-footer workout-card">
-                                            <div class="btn d-inline-block btn-danger">
-                                                <a href="{% url 'delete_item' workout.id %}">Delete</a>
+                                    <!-- Deletion Modal -->
+                                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="modalHeading"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header workout-card">
+                                                    <h5 class="modal-title workout-card" id="modalHeading">Delete Post</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body workout-card">
+                                                    Are you sure you want to delete this post?
+                                                </div>
+                                                <div class="modal-footer workout-card">
+                                                    <div class="btn d-inline-block btn-danger">
+                                                        <a href="{% url 'delete_item' workout.id %}">Delete</a>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
                                             </div>
-                                            <button type="button" class="btn btn-light"
-                                                data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </div>
+
+
+                                    {% else %}
+
+                                    {% endif %}
+
                                 </div>
                             </div>
-
-
-                            {% else %}
-
-                            {% endif %}
-
                         </div>
+                    </div>
+                    <div class="col-12 mt-5 left">
                     </div>
                 </div>
             </div>
-            <div class="col-12 mt-5 left">
-            </div>
         </div>
-    </div>
-</div>
 
 
 
-    {%endblock%}
+{%endblock%}

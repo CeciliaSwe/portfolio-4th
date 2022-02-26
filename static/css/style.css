@@ -48,7 +48,7 @@ i {
     margin-right: 0.5em;
 }
 
-#btn-custom {
+.btn-custom {
     position: absolute;
     bottom: -7px;
     right: -7px;
