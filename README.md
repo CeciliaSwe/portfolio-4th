@@ -118,7 +118,16 @@ Chosing "Delete" will delete the workout permanently and display a message to th
 
 #### Signup / Login / Logout
 
-Users can signup to gain access to all features (i.e. ability to add, edit and delete their own Workouts). Once an account is created, users can login and logout.
+Users can signup to gain access to all features (i.e. ability to add, edit and delete their own Workouts).
+
+![Signup](assets/features/signup.png)
+
+Once an account is created, users can login and logout and are notified by messages when signing in and out.
+
+![Signin](assets/features/signin.png)
+![Signin](assets/features/signin_success.png)
+![Signout](assets/features/signout.png)
+![Signout](assets/features/signout_success.png)
 
 
 
