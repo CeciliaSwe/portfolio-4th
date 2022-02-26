@@ -197,73 +197,24 @@ An MS Excel workbook detailing these tests can be found [here](https://github.co
 
 ### HTML valiation
 
-All pages (including present Workouts) have been validated through the [HTML validator](https://validator.w3.org/nu/#textarea)
-
-
-| Page  |  result
-| ------ | ------ |
-|  [Index](assets/validation/html/html_index.pdf) |  No errors |
-|  [Index](assets/validation/html/html_add.pdf) |  No errors |
-|  [Index](assets/validation/html/html_login.pdf) |  No errors |
-|  [Index](assets/validation/html/html_signup.pdf) |  No errors |
-|  [Index](assets/validation/html/html_logout.pdf) |  No errors |
-|  [Index](assets/validation/html/workouts) |  No errors |
-|  [Index](assets/validation/html/html_index.pdf) |  No errors |
-|  [Index](assets/validation/html/html_index.pdf) |  No errors |
+All pages (including present Workouts) have been validated through the [HTML validator](https://validator.w3.org/nu/#textarea) without errors.
+The copy of the HTML reports can be found [here](assets/validation/html)
 
 
 
 ### CSS validation
 
-No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/). The copy of the CSS report can be found [here](static/img/readme/CSS-validator.pdf)
+No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/). The copy of the CSS report can be found [here](assets/validation/css/validation_css.pdf)
 
 ### JavaScript validation
 Javascript code validation was complited on [jshint](https://jshint.com/)
-Initialy it was returning errors in relation of ES6 syntax, which was resolved by adding this line to the beggining of the file
-```
-/*jshint esversion: 6*/
-```
 
-| Page  |  result
-| ------ | ------ |
-|  [Google Places](static/img/readme/JSHint-google-places.pdf) |  two warnings |
-|  [User Profile](static/img/readme/JSHint-user-profile.pdf) |  two warnings |
+The copy of the CSS report can be found [here](assets/validation/js/validation_js.pdf)
 
 
-Unfortunately it has been also returning errors connected with the use of JQuery, which I have not managed to resolve. It claims I have 3 undefined variables '$', 'google-api-key', 'google'.
+### Python validaton
 
-
-I have left two warnings in the code, which do not seem to have affected the working of the code
-```
-252	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (google, $, lat_id, long_id)
-248	The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.
-```
-
-### Python beautify
-All pages were initialy put through [Python Formatter](https://codebeautify.org/python-formatter-beautifier) which automaticaly sorted most of the too long lines errors. Than the code was checked by pylint and problems were displayed in the console. Once the issues were cleared I have put all code though pep8 validator.
-
-### Python validator
-
-
-| App name  |  file name | result |
-| ------ | ------ |------ |
-| mileage-tracker |  urls.py |  [all ok](static/img/readme/pep8-validator/01-mileage-tracker-urls.txt) |
-| traffic |  admin.py |  [all ok](static/img/readme/pep8-validator/02-traffic-admin.txt) |
-| traffic |  forms.py |  [all ok](static/img/readme/pep8-validator/02-traffic-forms.txt) |
-| traffic |  models.py |  [all ok](static/img/readme/pep8-validator/02-traffic-models.txt) |
-| traffic |  urls.py |  [all ok](static/img/readme/pep8-validator/02-traffic-urls.txt) |
-| traffic |  views.py |  [all ok](static/img/readme/pep8-validator/02-traffic-views.txt) |
-| users |  admin.py |  [all ok](static/img/readme/pep8-validator/03-users-admin.txt) |
-| users |  forms.py |  [all ok](static/img/readme/pep8-validator/03-users-forms.txt) |
-| users |  models.py |  [all ok](static/img/readme/pep8-validator/03-users-models.txt) |
-| users |  urls.py |  [all ok](static/img/readme/pep8-validator/03-users-urls.txt) |
-| users |  views.py |  [all ok](static/img/readme/pep8-validator/03-users-views.txt) |
-| visits |  admin.py |  [all ok](static/img/readme/pep8-validator/04-visits-admin.txt) |
-| visits |  forms.py |  [all ok](static/img/readme/pep8-validator/04-visits-forms.txt) |
-| visits |  mixins.py |  [all ok](static/img/readme/pep8-validator/04-visits-mixins.txt) |
-| visits |  models.py |  [all ok](static/img/readme/pep8-validator/04-visits-models.txt) |
-| visits |  urls.py |  [all ok](static/img/readme/pep8-validator/04-visits-urls.txt) |
-| visits |  views.py |  [all ok](static/img/readme/pep8-validator/04-visits-views.txt) |
+All pages have been validated though the PEP8 validator. The copy of the PEP8 reports can be found [here](assets/validation/python)
 
 
 ##### Return to [top](#abc-wod)
