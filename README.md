@@ -168,7 +168,17 @@ Once an account is created, users can login and logout and are notified by messa
 
 ## Testing
 
+Owing to time constraints, it was not possible to design and implement automatic Unit-testing for this project, and so extensive manual testing was completed instead.
+An MS Excel workbook detailing these tests can be found [here](https://github.com/CeciliaSwe/portfolio-4th/tree/main/assets/features/testing/page_tests_portfolio4th.xlsx)
+
 ### Bugs
+
+#### Resolved Bugs
+
+- add_items page would not render. Solved by rearranging order of url paths.
+- SummerNote only dieplaying in Admin panel and not in front end form. Solved by adding updated SummerNote settings to settings.py
+- SummerNote overflowing its div on medium and smaller screens. Solved by adding updated SummerNote settings to settings.py
+- Unable to add Workout due to form validation. Solved by (1) add Slugify to generate the slug when adding Workout through the front end form and (2) replace Multiselect widget with Radio Buttons.
 
 
 ### Validator testing

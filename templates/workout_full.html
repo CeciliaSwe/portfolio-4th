@@ -28,8 +28,8 @@
                                         <span class="equipment">{{ workout.equipment }} </span>
                                     </div>
                                     {{ workout.content|safe}}
+                                    {% if user == workout.author %}
                                     <div>
-                                        {% if user == workout.author %}
                                         <span class="btn btn-sm">
                                             <a href="{% url 'edit_item' workout.id %}"> <i class="fas fa-pen"></i></a>
                                         </span>
