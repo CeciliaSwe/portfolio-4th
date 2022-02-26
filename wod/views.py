@@ -35,11 +35,20 @@ class WorkoutAdd(View):
             )
             return redirect("/")
         else:
+            add_workout = WorkoutForm()
             messages.add_message(
                 request, messages.ERROR,
                 "Something went wrong, please try again!"
             )
-            print(add_workout.errors)
+
+        return render(
+            request,
+            'add_item.html',
+            {
+
+                "workout_form": WorkoutForm()
+            },
+        )
 
 
 class WorkoutFull(View):
