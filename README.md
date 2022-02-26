@@ -67,6 +67,8 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
 #### Navbar and footer
 Navbar and footer are using Bootstrap components and are adjusted  to the needs of the project.
+![Navbar](assets/features/navbar.png)
+![Footer](assets/features/footer.png)
 
 ##### Home page
 
@@ -78,7 +80,6 @@ Home page consists of a Welcome Hero with a short message with buttons to Sign u
 Second part of the home page is the list of workouts. The list is generated dynamically as per most current workouts first. The page paginated at 9 workouts and will at that point display Next /Prev buttons to navigate to next and previous pages.
 
 ![Home](assets/features/index_pagination.png)
-
 
 
 #### Workout full
@@ -138,6 +139,8 @@ Once an account is created, users can login and logout and are notified by messa
 - Allow users to add favorite workouts to revisit later
 - Allow user to login via social media
 
+##### Return to [top](#abc-wod)
+
 ## Technologies Used
 
 ### Languages
@@ -167,6 +170,8 @@ Once an account is created, users can login and logout and are notified by messa
 - Heroku - Where the deployed application is served from
 - Cloudinary - Where static files are stored for the deployed application
 
+##### Return to [top](#abc-wod)
+
 ## Testing
 
 Owing to time constraints, it was not possible to design and implement automatic Unit-testing for this project, and so extensive manual testing was completed instead.
@@ -195,6 +200,8 @@ An MS Excel workbook detailing these tests can be found [here](https://github.co
 - CSS<br>
 
 - Python<br>
+
+##### Return to [top](#abc-wod)
 
 ## Deployment
 
@@ -244,9 +251,12 @@ An MS Excel workbook detailing these tests can be found [here](https://github.co
     - Browse to Deploy and run deployment
     - Wait for confirmation that app has deployed
 
+##### Return to [top](#abc-wod)
+
 ## Credits
 
-Used to set up SummerNote in ModelForms https://djangocentral.com/integrating-summernote-in-django/
+Used to set up SummerNote in ModelForms [cdjangocentral](https://djangocentral.com/integrating-summernote-in-django/)
+Used to set signup email to optional [django-allauth](https://django-allauth.readthedocs.io/en/latest/configuration.html)
 
 ### Content
 
