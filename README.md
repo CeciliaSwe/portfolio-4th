@@ -1,6 +1,11 @@
 # ABC WOD
 
-ACB WOD is a website for people who workout and need inspiration for their next workout (or Workout of the day - WOD). Any user can view workout, both exerpt and in detail, but only registered users can add workouts. Owners of workouts are also able to edit and delete their posts.
+## Purpose
+ABC WOD is a website for people who workout and need inspiration for their next workout (or Workout of the day - WOD). Any user can view workouts, but only registered users can add workouts. Owners of workouts are also able to edit and delete their posts.
+
+A full list of technologies used can be found in the technologies section of this document. Note that GitHub as of March 2021 automatically creates a Table of Contents for the README file.
+
+## ABC WOD Responsive Website
 
 ![Responsive](assets/wireframes_responsive/responsive.png)
 
@@ -9,25 +14,7 @@ ACB WOD is a website for people who workout and need inspiration for their next 
 
 ## UX
 
-### Imagery
-
-My application doesn't feature any imagery as such, however it does make use of Font Awesome icons where needed to add a bit of visual enhancement.
-
-### Typography
-
-The font used for my website is "Murecho".
-
-### Colour scheme
-
-### Schema
-
-Please see below an overview of the schema for my application:
-
-The details of each schema is as follows:
-
-### Wireframes
-
-Wireframes were created with Balsamiq and can be found [here](https://github.com/CeciliaSwe/portfolio-4th/tree/main/assets/wireframes_responsive/P4_workout_wireframes_responsive.pdf). The project was developed from the initial wireframes and some modifications were made during the development process for improved usability and user experience.
+This website was created to showcase my knowledge in Fullstack Development and to provide users with a place to view, create, update and remove Workouts of their own as well as view those created by others.
 
 ### User Stories:
 
@@ -47,18 +34,40 @@ Github issues were used to record the user stories. Stories were categorized int
 - As a logged in site user I can edit my workouts so that they can be updated as needed
 - As a logged in site user I can delete my workouts so that they can be permanently removed if no longer needed
 - As a logged in site user I can logout so that my account and contributions are protected
--As a logged in user, I can use a “What you see is what you get” for formatting text so that it visually displays as expected.
+- As a logged in user, I can use a “What you see is what you get” for formatting text so that it visually displays as expected
+
 
 ### Could haves (not implemented yet)
 - As a logged in site user I can search and filter the content so that I can find a workout that suits my preferences
 - As a logged in site user I can add workouts to a favorite´s list so that I can easily revisit them
 - As a site user I can use social media to login so that I don't have to create a new account
 
-### Agile Methodology
+### Wireframes
+
+Wireframes were created with Balsamiq and are uploaded to a separate folder - [View](https://github.com/CeciliaSwe/portfolio-4th/tree/main/assets/wireframes_responsive/P4_workout_wireframes_responsive.pdf). The project was developed from the initial wireframes and some modifications were made during the development process for improved usability and user experience.
+
+### Design
+
+#### Imagery
+
+No physical images will be used on the site. It does make use of Font Awesome icons for visual enhancement.
+
+#### Typography
+
+The font used for my website is "Murecho". The font is provided by Google Fonts.
+
+#### Colour scheme
+
+I chose a dark theme with backgrounds (overall background and card background) in 2 dark shades and a font in white. A bright orange is used for details for contrast.
+
+#### Model
+
+An initial model was created with and is uploaded to a separate folder - [View](https://github.com/CeciliaSwe/portfolio-4th/tree/main/assets/wireframes_responsive/workout_table.pdf)
+The final model has minor changes (such as field type) for usability purposes, but the overall structure has been adhered to.
+
+#### Agile Methodology
 
 Github Issues were used to create User Stories and group them according to MoSCoW prioritization technique. GitHub Projects and Kanban board was used to visualize and execute the agile methodology. The issues are currently in two categories: “Done” and “For next release”.
-
-
 
 
 ## Features
@@ -66,43 +75,42 @@ Github Issues were used to create User Stories and group them according to MoSCo
 ### Existing Features
 
 #### Navbar and footer
-Navbar and footer are using Bootstrap components and are adjusted  to the needs of the project.
+- Navbar and footer are using Bootstrap components and are adjusted to the needs of the project.
 ![Navbar](assets/features/navbar.png)
 ![Footer](assets/features/footer.png)
 
 ##### Home page
 
-Home page consists of a Welcome Hero with a short message with buttons to Sign up/Login or Add Workout - depending on the user login status.
+- Home page consists of a Welcome Hero with a short message with buttons to Sign up/Login or Add Workout (depending on the user login status).
 ![Home](assets/features/index_loggedout.png)
 
 ![Home](assets/features/index_loggedin.png)
 
-Second part of the home page is the list of workouts. The list is generated dynamically as per most current workouts first. The page paginated at 9 workouts and will at that point display Next /Prev buttons to navigate to next and previous pages.
+- Second part of the home page is the list of workouts. The list is generated dynamically as per most current workouts first. The page paginated at 9 workouts and will at that point display Next / Prev buttons to navigate to next and previous pages.
 
 ![Home](assets/features/index_pagination.png)
 
-
 #### Workout full
 
-Clicking "View Workout" will take the user to the full Workout where the full contents is displayed.
+- Clicking "View Workout" will take the user to the full Workout where the full contents is displayed.
 
 ![Workout](assets/features/workout_full_notauthor.png)
 
-If user is the author of the workout, edit and delete icons will display at the bottom if the workout card to allow user to edit workout or delete workout.
+- If user is the author of the workout, edit and delete icons will display at the bottom if the workout card to allow user to edit workout or delete workout.
 
 ![Workout](assets/features/workout_full_author.png)
 
 #### Add Workout / Edit
 
-Add Workout displays a custom form where all fields are required. The content filed is a SummerNote WYSIWYG which allows user to custom the visual appearance of the content.
+- Add Workout button is displayed for logged in users and takes the user to custom form where all fields are required. The content field is a SummerNote WYSIWYG which allows user to customize the visual appearance of the content.
 
 ![Add](assets/features/add_form.png)
 
-Submitting a valid form will redirect user back to the homepage and the newly added workout is displayed first. A success message is displayed and automatically closed after 3,5 seconds.
+- Submitting a valid form will redirect user back to the homepage and the newly added workout is displayed first. A success message is displayed and automatically closed after 3,5 seconds.
 
 ![Workout](assets/features/add_success.png)
 
-If the user does not fill out the title field, the form will not submit and the title field is highlighted. If the user does to fill out any content, the form will reload blank and an error message is displayed and automatically closed after 3,5 seconds.
+- - If the user does not fill out the title field, the form will not submit and the title field is highlighted. If the user does to fill out any content, the form will reload blank and an error message is displayed and automatically closed after 3,5 seconds.
 
 ![Workout](assets/features/add_error.png)
 
@@ -110,27 +118,26 @@ The Edit form is identical to the Add form, but is pre-populated with the curren
 
 #### Delete Workout
 
-If user us the author of a workout, a delete icon will be displayed when viewing the full workout. Clicking the delete icon prompts a Delete Modal, asking "Are you sure you want to delete this workout?". Chosing "Close" will close the modal without action.
+- If user us the author of a workout, a delete icon will be displayed when viewing the full workout. Clicking the delete icon prompts a Delete Modal, asking "Are you sure you want to delete this workout?". Chosing "Close" will close the modal without action.
 
 ![Workout](assets/features/delete_modal.png)
 
-Chosing "Delete" will delete the workout permanently and display a message to the user that the Workout has been deleted. The message will be automatically closed after 3,5 seconds.
+- Chosing "Delete" will delete the workout permanently and display a message to the user that the Workout has been deleted. The message will be automatically closed after 3,5 seconds.
 
 ![Workout](assets/features/delete_success.png)
 
 #### Signup / Login / Logout
 
-Users can signup to gain access to all features (i.e. ability to add, edit and delete their own Workouts).
+- Users can signup to gain access to all features (i.e. ability to add, edit and delete their own Workouts).
 
 ![Signup](assets/features/signup.png)
 
-Once an account is created, users can login and logout and are notified by messages when signing in and out.
+- Once an account is created, users can login and logout and are notified by messages when signing in and out.
 
 ![Signin](assets/features/signin.png)
 ![Signin](assets/features/signin_success.png)
 ![Signout](assets/features/signout.png)
 ![Signout](assets/features/signout_success.png)
-
 
 
 ### Features Left to Implement
@@ -145,37 +152,46 @@ Once an account is created, users can login and logout and are notified by messa
 
 ### Languages
 
-- HTML - Required for the render templates
-- CSS - Used to provide required custom styling for the templates
-- JavaScript - Used to provide custom code to automatically dismiss messages
-- Python - The language that the Django framework is based on
+* HTML5
+	* This project uses HTML5 as the main language for content and structure of the Website.
+* CSS3
+	* This project uses CSS3 for Website styling
+* Javascript
+	*  This project uses Javascript for the required logic to allow for interactivity
+* Python - The language that the Django framework is based on
 
-### Libraries
+### Frameworks,Libraries and Programs used
 
-- Bootstrap - Used for various components in the templates as follows:
-    - Navbar - For navigation element in header
-    - Modal - Used for the post delete confirmation popup
-    - Grid - To configure layout of page elements
-    - CSS - Used for element styling
-    - JavaScript - Used for automation of components
+* [Django](https://www.djangoproject.com/)
+	* High-level Python web framework used to build this application
+* [Bootstrap](https://getbootstrap.com/)
+	* For components and styling
+* [Font Awesome](https://fontawesome.com/)
+	* Font awesome Icons are used
+* [Google Fonts](https://fonts.google.com/)
+	* Google fonts are used throughout the project to import the relevant fonts
+* [GitHub](https://github.com/)
+	* GithHub is the hosting site used to store the source code for the Website and [Git Pages](https://pages.github.com/) is used for the deployment of the live site.
+* [GitPod](https://gitpod.io/)
+	* GitPod is used as version control software to commit and push code to the GitHub repository where the source code is stored.
+* [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+	* Google chromes built in developer tools are used to inspect page elements and help debug issues with the site layout and test different CSS styles.
+* [balsamiq Wireframes](https://balsamiq.com/wireframes/)
+	* Balsamiq was used to create wireframes and UX design during the planning and design process.
+* [Am I Responsive?](http://ami.responsivedesign.is/)
+	* Used to generate the screenshots for responsive design.
+* [Heroku](https://dashboard.heroku.com/)
+	* Could application platform where the deployed application is served from
+* [Cloudinary](https://cloudinary.com/)
+	* Could application platform where the deployed application is served from
 
-### Frameworks
-
-- Django - Full stack framework used to build this application
-
-### Platforms
-
-- GitHub - Where code repository resides with Git version control
-- Gitpod - IDE used for development with Git version control
-- Heroku - Where the deployed application is served from
-- Cloudinary - Where static files are stored for the deployed application
 
 ##### Return to [top](#abc-wod)
 
 ## Testing
 
 Owing to time constraints, it was not possible to design and implement automatic Unit-testing for this project, and so extensive manual testing was completed instead.
-An MS Excel workbook detailing these tests can be found [here](https://github.com/CeciliaSwe/portfolio-4th/tree/main/assets/testing/page_tests_portfolio4th.xlsx)
+An MS Excel workbook detailing these tests and outcomes can be found [here](https://github.com/CeciliaSwe/portfolio-4th/tree/main/assets/testing/page_tests_portfolio4th.xlsx)
 
 ### Bugs
 
@@ -193,28 +209,27 @@ An MS Excel workbook detailing these tests can be found [here](https://github.co
 - If a user adds a Workout and select a full line, selects a style and then applies a different style to part of that line, this will generate HTML validation errors (as - for example - this can cause a h5 element can become nested inside a h4 element).
 
 
-### Validation testing
+### Validation
 
-### HTML valiation
+#### HTML valiation
 
-All pages (including present Workouts) have been validated through the [HTML validator](https://validator.w3.org/nu/#textarea) without errors.
-The copy of the HTML reports can be found [here](assets/validation/html)
-
-
-
-### CSS validation
-
-No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/). The copy of the CSS report can be found [here](assets/validation/css/validation_css.pdf)
-
-### JavaScript validation
-Javascript code validation was complited on [jshint](https://jshint.com/)
-
-The copy of the CSS report can be found [here](assets/validation/js/validation_js.pdf)
+HTML pages have been validated through the [HTML validator](https://validator.w3.org/nu/#textarea) without errors.
+A copy of the HTML reports can be found [here](assets/validation/html)
 
 
-### Python validaton
+#### CSS validation
 
-All pages have been validated though the PEP8 validator. The copy of the PEP8 reports can be found [here](assets/validation/python)
+No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/). A copy of the report can be found [here](assets/validation/css/validation_css.pdf)
+
+#### JavaScript validation
+Javascript code validation was complited on [jshint](https://jshint.com/) without errors.
+
+A copy of the report can be found [here](assets/validation/js/validation_js.pdf)
+
+
+#### Python validaton
+
+The Python pages have been validated though the PEP8 validator. Copies of the reports can be found [here](assets/validation/python)
 
 
 ##### Return to [top](#abc-wod)
