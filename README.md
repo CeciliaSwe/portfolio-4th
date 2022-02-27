@@ -37,7 +37,7 @@ Github issues were used to record the user stories. Stories were categorized int
 - As a logged in user, I can use a “What you see is what you get” for formatting text so that it visually displays as expected
 
 
-### Could haves (not implemented yet)
+#### Could haves (not implemented yet)
 - As a logged in site user I can search and filter the content so that I can find a workout that suits my preferences
 - As a logged in site user I can add workouts to a favorite´s list so that I can easily revisit them
 - As a site user I can use social media to login so that I don't have to create a new account
@@ -160,7 +160,7 @@ The Edit form is identical to the Add form, but is pre-populated with the curren
 	*  This project uses Javascript for the required logic to allow for interactivity
 * Python - The language that the Django framework is based on
 
-### Frameworks,Libraries and Programs used
+### Frameworks, Libraries and Programs used
 
 * [Django](https://www.djangoproject.com/)
 	* High-level Python web framework used to build this application
@@ -215,7 +215,7 @@ An MS Excel workbook detailing these tests and outcomes can be found [here](http
 
 #### HTML valiation
 
-HTML pages have been validated through the [HTML validator](https://validator.w3.org/nu/#textarea) without errors.
+HTML pages have been validated through the [HTML validator](https://validator.w3.org/nu/#textarea) without errors (Exception: the SummerNote Widget generates validation errors on the add_item and edit_item pages, but as this is build into the Widget and cannot be changed, it is disregarded as errors for the purpose of this Portfolio Project).
 A copy of the HTML reports can be found [here](assets/validation/html)
 
 
