@@ -19,7 +19,6 @@ ul {
 
 }
 
-
 li {
     display: inline-block;
     line-height: 1em;
@@ -38,7 +37,6 @@ i {
     color: #fe8c08;
     margin-right: 0.5em;
 }
-
 
 .equipment-outer {
     margin: 1em 0 1em;
@@ -65,7 +63,6 @@ i {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
 
 
-
 .card-body {
     margin-top: 7rem;
 }
@@ -82,7 +79,6 @@ i {
     border: none;
     background-color: transparent;
 }
-
 
 .back {
     margin-top: 10px;

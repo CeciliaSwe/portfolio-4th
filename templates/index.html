@@ -4,6 +4,7 @@
 
 
 <div class="container-fluid">
+    <!-- Welcome message -->
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-6 offset-3 mt-4 mb-4">
@@ -43,10 +44,9 @@
         {% endif %}
     </div>
 
-
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Workout Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for workout in workout_list %}

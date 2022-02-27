@@ -184,6 +184,8 @@ The Edit form is identical to the Add form, but is pre-populated with the curren
 	* Could application platform where the deployed application is served from
 * [Cloudinary](https://cloudinary.com/)
 	* Could application platform where the deployed application is served from
+* Heroku Postgres
+    * PostgreSQL is one of the world's most popular relational database management systems.
 
 
 ##### Return to [top](#abc-wod)
@@ -236,63 +238,140 @@ The Python pages have been validated though the PEP8 validator. Copies of the re
 
 ## Deployment
 
-### Initial deployment
+### Initial Deployment to Heroku
+
+**In your app / GitPod**
+
+1. Create new repository from CI template
+2. Install Django and required dependencies into Gitpod workspace
+3. Create new Django project called "wodabc" and app called "wod"
+4. Create Procfile as required
+5. Run "pip3 freeze --local > requirements.txt" to update requirements file
+6. Git add and git commit the changes made
+
+
+**Log into heroku**
+
+3. Log into [Heroku](https://dashboard.heroku.com/apps) or create a new account and log in
+4. top right-hand corner click "New" and choose the option Create new app, if you are a new user, the "Create new app" button will appear in the middle of the screen
+5. Write app name - it has to be unique, it cannot be the same as this app
+6. Choose Region - I am in Europe
+7. Click "Create App"
+
+
+**Add Postgres and set Config Vars**
+
+8. Go to Resources Tab, Add-ons, search and add Heroku Postgres
+9. Choose "settings" from the menu on the top of the page
+10. Go to section "Config Vars" and click button "Reveal Config Vars".
+11. Add the below variables to the list
+    * Database URL will be added automaticaly
+    * Secret_key - is the Django key
+    * Cloudinary URL can be obtained from [cloudinary](https://cloudinary.com/) follow the steps on the website to register.
+    * Configure "DISABLE_COLLECTSTATIC = 1" in Config Vars
+
+
+**GitPod/GitHub**
+
+12. Procfile needs to be created in your app
+```
+web: gunicorn PROJ_NAME.wsgi
+```
+
+13. In settings in your app add Heroku to ALLOWED_HOSTS
+14. Add and commit the changes in your code and push to github
+
+
+**Final step - deployment**
+
+15. Next go to "Deploy" in the menu bar on the top
+16. Go to section "deployment method", choose "GitHub"
+17. New section will appear "Connect to GitHub" - Search for the repository to connect to
+18. Type the name of your repository and click "search"
+19. Once Heroku finds your repository - click "connect"
+20. Scroll down to the section "Automatic Deploys"
+21. Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
+22. Click "Deploy branch"
+
+Once the program runs:
+you should see the message "the app was sussesfully deployed"
+
+23. Click the button "View"
+
+
+### Final Deployment
 
 - Gitpod
-    - Create new repository from CI template
-    - Install Django and required dependencies into Gitpod workspace
-    - Create new Django project called "wodabc" and app called "wod"
-    - Create Procfile as required
-    - Run "pip3 freeze --local > requirements.txt" to update requirements file
+    1. Ensure all required files up-to-date and that application is working
+    2. Run "pip3 freeze --local > requirements.txt" to update requirements file
+    3. Ensure "DEBUG = False" set in settings.py
+    4. Perform commit and push to GitHub
 
 - Heroku
-    - Log into Heroku
-    - Create new app called "wod-abc" (name has to be unique)
-    - Go to Resources Tab, Add-ons, search and add Heroku PostgreSQL "hobby" database as resource.
-    - Go to section "Config Vars" and click button "Reveal Config Vars"
-    - Add the below variables to the list
-        - Database URL will be added automaticaly
-        - Secret_key - is the django secret key
-        - Cloudinary URL can be obtained from [cloudinary](https://cloudinary.com/) follow the steps on the website to register.
-        - Configure "DISABLE_COLLECTSTATIC = 1" in Config Vars
+    1. Under the app, browse to Config Vars
+    2. Remove the value "DISABLE_COLLECTSTATIC = 1" from Config Vars
+    3. Browse to Deploy and run deployment
+    4. Wait for confirmation that app has deployed
 
-- Gitpod
-    - Create env.py file and add database path from Heroku
-    - Add secret key to env.py
-    - Configure database path and secret key in settings.py to be read from environment variables
-    - Add Heroku to ALLOWED_HOSTS in settings in your app
-    - Perform commit and push to GitHub
 
-- Heroku
-    - Under the app app, browse to Deploy
-    - Connect to Github, select appropriate repository
-    - Run Deploy
-    - Wait for confirmation that app has deployed
+### Forking the GitHub Repository
 
-### Final deployment
+By forking the GitHub Repository you will be able to make a copy of the original repository on your own GitHub account allowing you to view and/or make changes without affecting the original repository by using the following steps:
 
-- Gitpod
-    - Ensure all required files up-to-date and that application is working
-    - Run "pip3 freeze --local > requirements.txt" to update requirements file
-    - Ensure "DEBUG = False" set in settings.py
-    - Perform commit and push to GitHub
-- Heroku
-    - Under the app, browse to Config Vars
-    - Remove the value "DISABLE_COLLECTSTATIC = 1" from Config Vars
-    - Browse to Deploy and run deployment
-    - Wait for confirmation that app has deployed
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/CeciliaSwe/portfolio-4th)
+2. At the top of the Repository, click the "Fork" button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/CeciliaSwe/portfolio-4th)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open commandline interface on your computer
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/CeciliaSwe/portfolio-4th
+```
+
+7. Press Enter. Your local clone will be created.
+
+### Setting up your local enviroment
+
+1. Create Virtual enviroment on your computer or use gitpod built in virtual enviroment feature.
+2. Create env.py file. It needs to contain those 5 variables.
+
+* Database URL can be obtained from [heroku](https://dashboard.heroku.com/), add PostgreSQL as an add on when creating an app.
+* Secret_key - is the Django secret key
+* Cloudinary URL can be obtained from [cloudinary](https://cloudinary.com/) follow the steps on the website to register.
+
+
+```
+os.environ["DATABASE_URL"] = "..."
+os.environ["SECRET_KEY"] = "..."
+os.environ["CLOUDINARY_URL"] = "..."
+os.environ["DEVELOPMENT"] = "True"
+```
+
+3. Run command
+```
+pip3 install -r requirements.txt
+```
+
 
 ##### Return to [top](#abc-wod)
 
 ## Credits
 
+This project is based on the "I think therefore I blog" walkthrough from Code Institute, however all code has been customized and adapted for this project, both backend and frontend. Other inspiration and tutoritals are credited as per below:
+
 Used to set up SummerNote in ModelForms [cdjangocentral](https://djangocentral.com/integrating-summernote-in-django/)
 Used to set signup email to optional [django-allauth](https://django-allauth.readthedocs.io/en/latest/configuration.html)
 
-### Content
-
-### Media
 
 ### Acknowledgements
+-   To my Mentor [Chris Quinn](https://github.com/10xOXR) for guidance and pushing me to make smart choices.
+-   To CI Tutors for pointing in the right direction.
 
-
+##### Return to [top](#abc-wod)
